@@ -1,0 +1,14 @@
+typedef struct{
+  int x, y;
+} coord;
+
+typedef struct{
+  char **map;
+  int m, n;
+} mapStruct;
+
+typedef struct{
+  char type;
+  int size;
+  coord *pos;
+} boat;
