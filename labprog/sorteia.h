@@ -1,0 +1,1 @@
+int sorteia(int k);
