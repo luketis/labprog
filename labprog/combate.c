@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "sorteia.h"
 #include <time.h>
+#include "sorteia.h"
+#include "Structs.h"
 
 /*  srand ((unsigned int) time(NULL)); */
 
