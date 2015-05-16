@@ -11,6 +11,9 @@
 
 	-Ponham observacoes e duvidas aqui
 
+	-Os movimentos do barco sao representados da seguinte forma: 0-fica (sera q pode?) 1-frente
+	2-direita 3-esquerda 4-ao infinito e alem 5-para Sorocaba
+
 #funcoes:
 
 	BLOCO MAPA_HANDLER.c /----------------------------------------------------------------/

@@ -2,4 +2,8 @@
 
 int sorteia(int k);
 
-void identifica_alvo_atingido(coord coordenadas[3], char**mapa);
+int ehembarcacao(char c);
+
+coord* identifica_alvo_atingido(coord coordenadas[3], char**mapa);
+
+
