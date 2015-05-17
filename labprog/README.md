@@ -29,7 +29,7 @@
 
 	BLOCO BARCO.c /--------------------------------------------------------------------------/
 
-		rema_barco(int movimento, Mapa mapa)
+		rema_barco(int movimento, Boat barco, Mapa mapa)
 		-dado o movimento que o jogdor deseja que o barco performe, essa funcao verifica se eh possivel realiza-lo. Se sim, entao ele modifica o mapa
 		-retorna 0 se a posicao era valida, e -1 se invalida
 
