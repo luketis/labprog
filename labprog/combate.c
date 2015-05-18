@@ -19,7 +19,7 @@ coord* identifica_alvo_atingido(coord coordenadas[3], Map mapa){
   int i;
   coord* c = (coord*) malloc(3*sizeof(coord));
   for (i = 0; i < 3; i++) {
-    c[i] = NULL;
+    (c[i]).x = -1;
     if(mapa->map[(coordenadas[i]).x][(coordenadas[i]).y] == '.')   
       mapa->map[(coordenadas[i]).x][(coordenadas[i]).y] = '=';
     
