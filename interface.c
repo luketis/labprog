@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include "interface.h"
+#include "Structs.h"
+
+void introducao(){
+  printf("Bem-vindo marinheiro \n");
+  printf("\n");
+  printf("    <|> \n");
+  printf("   __|__ |___| |\\        \n");                      
+  printf("   |o__| |___| | \\       \n");                    
+  printf("   |___| |___| |o \\      \n");               
+  printf("  _|___| |___| |__o\\     \n");               
+  printf(" /...\\_____|___|____\\_/ \n");
+  printf(" \\   o * o * * o o  /   \n");
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");    
+  printf("BBBBB           tt            lll hh             \n"); 
+  printf("BB   B    aa aa tt      aa aa lll hh        aa aa\n"); 
+  printf("BBBBBB   aa aaa tttt   aa aaa lll hhhhhh   aa aaa\n");
+  printf("BB   BB aa  aaa tt    aa  aaa lll hh   hh aa  aaa\n");
+  printf("BBBBBB   aaa aa  tttt  aaa aa lll hh   hh  aaa aa\n");
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("NN   NN                         lll\n"); 
+  printf("NNN  NN   aa aa vv   vv   aa aa lll\n"); 
+  printf("NN N NN  aa aaa  vv vv   aa aaa lll\n");
+  printf("NN  NNN aa  aaa   vvv   aa  aaa lll\n");
+  printf("NN   NN  aaa aa    v     aaa aa lll\n");
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+
+  printf("Entre com o caminho do arquivo que contem o mapa e depois com o caminho \ndo arquivo que contem o arquivo de saida\n");
+}
+
+void mensagem_posicao(){
+   printf("Escolha a posicao inicial: \n");
+}
+
+void mensagem_posicao_invalida(){
+  printf("Posição inválida, entre com outra.\n");
+}
+
+void mensagem_movimento(){
+  printf("Escolha para qual direcao se movimentar:\n");
+}
+
+void mensagem_turno(coord* coordenadas, Boat* atingidos, int modo, char caminho[]){
+  int i;
+  FILE* c;
+  if(modo){
+    c = fopen(caminho, "a+");
+  }
+  else
+    c = stdout;
+  fprintf(c, "\n");
+  for(i = 0; i < 3; i++){
+    fprintf(c, "Tiro %d acertou posicao %d, %d", i, coordenadas[i].x, coordenadas[i].y);
+    switch(atingidos[i]->tipo){
+      
+    case 'C':
+      fprintf(c, " onde havia um Cruzador\n");
+      break;
+    case 'S':
+      fprintf(c, " onde havia um Submarino\n");
+      break;
+    case 'D':
+      fprintf(c, " onde havia um Destroyer\n");
+      break;
+    case 'P':
+      fprintf(c, " onde havia um Porta-Avião\n");
+      break;
+    case 'H':
+      fprintf(c, " onde havia um Hidro-Aviao\n");
+      break;
+    case 'T':
+      fprintf(c, " onde voce ja esteve\n");
+      break;
+    case 'B':
+      fprintf(c, " onde você estava!\n");
+      break;
+    default:
+      fprintf(c, " onde apenas havia água\n");
+      break;
+    }
+  }
+  fprintf(c, "\n");
+  if(modo)
+    fclose(c);
+}
+void mensagem_final(int morreu){
+   if(morreu){
+    printf("Você perdeu, você é uma vergonha para sua familia pirata.\n");
+    printf("    _____    \n");
+    printf("   /     \\  \n");
+    printf("  | () () |  \n");
+    printf("   \\  ^  /  \n");
+    printf("    |||||    \n");
+    printf("    |||||    \n"); 
+  }
+
+  else{
+    printf("PARABÉNS Marinheiro !\n");
+    printf(" **  ** \n");
+    printf(" **  **  \n");
+    printf("\n");
+    printf("*     * \n");
+    printf(" *   * \n");
+    printf("  ***  \n");
+  }
+}

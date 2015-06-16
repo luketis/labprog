@@ -1,0 +1,33 @@
+FLAGS = -g -O0
+CC = gcc
+
+jogo: main.o combate.o maphandling.o interface.o barco.o afundador.o grafico.o xwc.o
+	$(CC) $(FLAGS) main.o combate.o maphandling.o interface.o barco.o afundador.o grafico.o xwc.o -o jogo
+
+main.o: main.c
+	$(CC) $(FLAGS) -c main.c
+
+barco.o: barco.c barco.h combate.h Structs.h
+	$(CC) $(FLAGS) -c barco.c
+
+maphandling.o: maphandling.c maphandling.h combate.h Structs.h
+	$(CC) $(FLAGS) -c maphandling.c
+
+interface.o: interface.c interface.h Structs.h
+	$(CC) $(FLAGS) -c interface.c
+
+combate.o: combate.c afundador.c
+	$(CC) $(FLAGS) -c combate.c 
+
+afundador.o: afundador.c afundador.h Structs.h
+	$(CC) $(FLAGS) -c afundador.c 
+
+grafico.o: Structs.h grafico.h xwc.h xwc.c
+	$(CC) $(FLAGS) -c grafico.c
+
+xwc.o: xwc.c xwc.h
+	$(CC) $(FLAGS) -c xwc.c
+
+clean:
+	rm -f *.o
+	rm -f jogo
