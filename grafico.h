@@ -22,14 +22,14 @@ void seleciona(WINDOW* win, Map mapa, coord coordenas, PIC texturas[], int desen
 
 void desenha_celula(WINDOW* win, Map mapa, coord coordenadas, PIC texturas[], coord tamanhotela, int tamanhocelula);
 
-Boat adesenhar_S(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC textura);
+void desenhar_S(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]);
 
-Boat adesenhar_P(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC textura);
+void desenhar_P(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]);
 
-Boat adesenhar_C(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC textura);
+void desenhar_C(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]);
 
-Boat adesenhar_D(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC textura);
+void desenhar_D(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]);
 
-Boat adesenhar_H(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC textura);
+void desenhar_H(WINDOW* win, coord coordenas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]);
 
 #endif
