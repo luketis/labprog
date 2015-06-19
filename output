@@ -968,3 +968,1202 @@ Tiro 0 acertou posicao 2, 5 onde apenas havia água
 Tiro 1 acertou posicao 2, 6 onde apenas havia água
 Tiro 2 acertou posicao 4, 0 onde havia um Cruzador
 
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . B . H . 
+3 D D . D D . . . 
+4 . = . . . . H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 3, 1 onde apenas havia água
+Tiro 1 acertou posicao 3, 1 onde apenas havia água
+Tiro 2 acertou posicao 4, 0 onde havia um Cruzador
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . . . . ! . H . 
+3 D D . * * . . . 
+4 . . . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 1, 4 onde apenas havia água
+Tiro 1 acertou posicao 0, 0 onde havia um Cruzador
+Tiro 2 acertou posicao 2, 3 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . B . H . 
+3 D D = D D . . . 
+4 . . . . . . H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 4, 2 onde havia um Cruzador
+Tiro 1 acertou posicao 2, 2 onde apenas havia água
+Tiro 2 acertou posicao 2, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T * = * 
+2 . . . . B . * . 
+3 D D . D D . . . 
+4 . . . . . . H . 
+5 C C C C . H = H 
+
+Tiro 0 acertou posicao 0, 5 onde havia um Hidro-Aviao
+Tiro 1 acertou posicao 4, 6 onde apenas havia água
+Tiro 2 acertou posicao 0, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . B . H . 
+3 D D . D D . . . 
+4 . . . . . . H . 
+5 * * * * . H = H 
+
+Tiro 0 acertou posicao 4, 6 onde apenas havia água
+Tiro 1 acertou posicao 4, 3 onde havia um Cruzador
+Tiro 2 acertou posicao 4, 0 onde havia um Cruzador
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T * . * 
+2 . . . . B . * . 
+3 * * . D D . . . 
+4 . . . . . . H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 4, 1 onde havia um Cruzador
+Tiro 1 acertou posicao 2, 0 onde havia um Destroyer
+Tiro 2 acertou posicao 0, 5 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T * . * 
+2 = . . . B . * . 
+3 D D . D D . . . 
+4 . . . . . . H . 
+5 C C C C = H . H 
+
+Tiro 0 acertou posicao 1, 0 onde apenas havia água
+Tiro 1 acertou posicao 4, 4 onde apenas havia água
+Tiro 2 acertou posicao 0, 5 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . . . . B . H . 
+3 D D . D D . = . 
+4 . . . . . = H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 0, 3 onde havia um Cruzador
+Tiro 1 acertou posicao 3, 5 onde apenas havia água
+Tiro 2 acertou posicao 2, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . B . H . 
+3 D D . D D . . . 
+4 . . . . = . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 4, 5 onde havia um Hidro-Aviao
+Tiro 1 acertou posicao 3, 4 onde apenas havia água
+Tiro 2 acertou posicao 4, 5 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 . . . . B . * . 
+3 D D . D D . . . 
+4 . . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 0, 2 onde havia um Cruzador
+Tiro 1 acertou posicao 4, 5 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 1, 6 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 . . . B T . * . 
+3 D D = D D . . . 
+4 = . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 2, 2 onde apenas havia água
+Tiro 1 acertou posicao 0, 0 onde apenas havia água
+Tiro 2 acertou posicao 3, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 . . . B T . * = 
+3 D D = D D . . . 
+4 = . . . . . * . 
+5 C C C C . * = * 
+
+Tiro 0 acertou posicao 4, 6 onde apenas havia água
+Tiro 1 acertou posicao 4, 5 onde apenas havia água
+Tiro 2 acertou posicao 1, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 . = . ! T . * = 
+3 D D = D D . . . 
+4 = . . . . . * . 
+5 C C C C . * = * 
+
+Tiro 0 acertou posicao 1, 1 onde apenas havia água
+Tiro 1 acertou posicao 1, 3 onde apenas havia água
+Tiro 2 acertou posicao 0, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . . = . B . H . 
+3 D D . D D . = . 
+4 . . . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 0, 3 onde havia um Cruzador
+Tiro 1 acertou posicao 1, 2 onde apenas havia água
+Tiro 2 acertou posicao 2, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . = . T B H . 
+3 D D . D D . = . 
+4 . . . . . . * . 
+5 C C C C . * = * 
+
+Tiro 0 acertou posicao 4, 6 onde apenas havia água
+Tiro 1 acertou posicao 4, 5 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 0, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . = = T T H . 
+3 D D . D D B = . 
+4 = . . . . . * . 
+5 C C C C . * = * 
+
+Tiro 0 acertou posicao 3, 0 onde apenas havia água
+Tiro 1 acertou posicao 0, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . * 
+2 . . = = T T * = 
+3 D D . D D T = . 
+4 = . . . . B * . 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 4, 1 onde havia um Cruzador
+Tiro 1 acertou posicao 0, 7 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 1, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . * 
+2 = . = = T T * = 
+3 D D . D D T = . 
+4 = . . . B T * . 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 4, 0 onde apenas havia água
+Tiro 1 acertou posicao 1, 2 onde apenas havia água
+Tiro 2 acertou posicao 1, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . * 
+2 = . = = T T * = 
+3 D D = D D T = . 
+4 = . . B T T * . 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 2, 2 onde apenas havia água
+Tiro 1 acertou posicao 2, 6 onde apenas havia água
+Tiro 2 acertou posicao 3, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . * 
+2 = . = = T T * = 
+3 D D = D D T = . 
+4 = . B T + T * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 3, 4 onde apenas havia água
+Tiro 1 acertou posicao 4, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . * 
+2 = . = = T T * = 
+3 D D = D D T = . 
+4 = B T T + T * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 0, 0 onde apenas havia água
+Tiro 1 acertou posicao 0, 1 onde apenas havia água
+Tiro 2 acertou posicao 2, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . * 
+2 = . = = T T * = 
+3 D D = * * + = . 
+4 = T T T + T * . 
+5 * B * * = * = * 
+
+Tiro 0 acertou posicao 2, 4 onde havia um Destroyer
+Tiro 1 acertou posicao 2, 5 onde apenas havia água
+Tiro 2 acertou posicao 2, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 = . . . ! . H . 
+3 * * . D D . . . 
+4 . . . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 1, 4 onde apenas havia água
+Tiro 1 acertou posicao 1, 0 onde apenas havia água
+Tiro 2 acertou posicao 2, 1 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . . = . B . H . 
+3 D D . D D . = . 
+4 . . . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 1, 2 onde apenas havia água
+Tiro 1 acertou posicao 2, 6 onde apenas havia água
+Tiro 2 acertou posicao 0, 0 onde havia um Cruzador
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . . = B T . H = 
+3 D D . D D . = . 
+4 . . . . = . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 3, 4 onde apenas havia água
+Tiro 1 acertou posicao 1, 7 onde apenas havia água
+Tiro 2 acertou posicao 4, 7 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . . B T T . H = 
+3 D D . * * . = . 
+4 . . . . = . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 2, 3 onde havia um Destroyer
+Tiro 1 acertou posicao 0, 3 onde apenas havia água
+Tiro 2 acertou posicao 0, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . = T B T . H = 
+3 * * . * * . = . 
+4 . . . . = . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 1, 1 onde apenas havia água
+Tiro 1 acertou posicao 3, 4 onde apenas havia água
+Tiro 2 acertou posicao 2, 1 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . = T + T . H = 
+3 * * . B * . = . 
+4 . . = . = . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 1, 3 onde apenas havia água
+Tiro 1 acertou posicao 3, 2 onde apenas havia água
+Tiro 2 acertou posicao 1, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 = = T + T . H = 
+3 * * = T * . = . 
+4 . . = B = . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 3, 4 onde apenas havia água
+Tiro 1 acertou posicao 1, 0 onde apenas havia água
+Tiro 2 acertou posicao 2, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 = = T + T . H = 
+3 * * = T * . = . 
+4 . . B T = . * . 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 0, 0 onde apenas havia água
+Tiro 1 acertou posicao 4, 2 onde havia um Cruzador
+Tiro 2 acertou posicao 4, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 = = + + + . H = 
+3 * * = T * . = . 
+4 . B T T = . * . 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 1, 4 onde apenas havia água
+Tiro 1 acertou posicao 1, 2 onde apenas havia água
+Tiro 2 acertou posicao 0, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 = = + + + . H = 
+3 * * = T * . = . 
+4 B T T T = . * . 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 4, 2 onde apenas havia água
+Tiro 1 acertou posicao 3, 4 onde apenas havia água
+Tiro 2 acertou posicao 4, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 = = + + + . H = 
+3 * * = + * . = . 
+4 ! T T T = . * . 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 3, 0 onde apenas havia água
+Tiro 1 acertou posicao 2, 3 onde apenas havia água
+Tiro 2 acertou posicao 1, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . * 
+2 . . . . B . * . 
+3 D D = D D . . . 
+4 . = . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 2, 2 onde apenas havia água
+Tiro 1 acertou posicao 0, 7 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 3, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 . . . B T . * . 
+3 D D = D D . . . 
+4 . = . = . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 0, 1 onde havia um Cruzador
+Tiro 1 acertou posicao 0, 5 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 3, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 . . . T B . * . 
+3 D D = D D . . . 
+4 = = . = . = * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 3, 0 onde apenas havia água
+Tiro 1 acertou posicao 4, 5 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 3, 5 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 . . . T T B * . 
+3 D D = D D . = . 
+4 = = . = . = * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 3, 1 onde apenas havia água
+Tiro 1 acertou posicao 2, 6 onde apenas havia água
+Tiro 2 acertou posicao 0, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 = . . T T T * . 
+3 D D = D D B = . 
+4 = = . = . = * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 3, 1 onde apenas havia água
+Tiro 1 acertou posicao 0, 7 onde apenas havia água
+Tiro 2 acertou posicao 1, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 = . . T T T * . 
+3 * * = D D T = . 
+4 = = . = . B * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 4, 5 onde apenas havia água
+Tiro 1 acertou posicao 2, 0 onde havia um Destroyer
+Tiro 2 acertou posicao 3, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 = = . + T + * . 
+3 * * = D D T = . 
+4 = = . = B T * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 1, 5 onde apenas havia água
+Tiro 1 acertou posicao 1, 3 onde apenas havia água
+Tiro 2 acertou posicao 1, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 = = . + T + * . 
+3 * * = D D T = . 
+4 = = . B T T * = 
+5 * * * * . * . * 
+
+Tiro 0 acertou posicao 4, 0 onde havia um Cruzador
+Tiro 1 acertou posicao 1, 6 onde apenas havia água
+Tiro 2 acertou posicao 3, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 = = = + T + * . 
+3 * * = * * T = . 
+4 = = B T T T * = 
+5 * * * * . * . * 
+
+Tiro 0 acertou posicao 2, 4 onde havia um Destroyer
+Tiro 1 acertou posicao 0, 7 onde apenas havia água
+Tiro 2 acertou posicao 1, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T * . * 
+2 = = = + T + * . 
+3 * * ! * * T = . 
+4 = = T T T T * = 
+5 * * * * . * = * 
+
+Tiro 0 acertou posicao 1, 0 onde apenas havia água
+Tiro 1 acertou posicao 2, 2 onde apenas havia água
+Tiro 2 acertou posicao 4, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C + H . H 
+2 . . . . B . H . 
+3 D D . D D . . . 
+4 . . = . . = H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 3, 2 onde apenas havia água
+Tiro 1 acertou posicao 3, 5 onde apenas havia água
+Tiro 2 acertou posicao 0, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C + H . H 
+2 . . . B T . H . 
+3 * * . D D . . . 
+4 . . = = . = H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 2, 0 onde havia um Destroyer
+Tiro 1 acertou posicao 4, 0 onde havia um Cruzador
+Tiro 2 acertou posicao 3, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . T B . H . 
+3 * * . D D . . . 
+4 . = = = . = H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 3, 1 onde apenas havia água
+Tiro 1 acertou posicao 0, 1 onde havia um Cruzador
+Tiro 2 acertou posicao 2, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . T T B H . 
+3 * * . D D = . . 
+4 . = = = . = H . 
+5 * * * * = H . H 
+
+Tiro 0 acertou posicao 2, 5 onde apenas havia água
+Tiro 1 acertou posicao 4, 4 onde apenas havia água
+Tiro 2 acertou posicao 3, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . T B T H . 
+3 * * = D D = . . 
+4 . = = = . = * . 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 4, 7 onde havia um Hidro-Aviao
+Tiro 1 acertou posicao 2, 2 onde apenas havia água
+Tiro 2 acertou posicao 2, 5 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . T T B H . 
+3 * * = D D = . . 
+4 . = = = . = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 0, 1 onde apenas havia água
+Tiro 1 acertou posicao 4, 6 onde apenas havia água
+Tiro 2 acertou posicao 4, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . + B T H . 
+3 * * = D D = = . 
+4 . = = = . = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 1, 3 onde apenas havia água
+Tiro 1 acertou posicao 0, 2 onde apenas havia água
+Tiro 2 acertou posicao 2, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . + T B H . 
+3 * * = D D = = . 
+4 . = = = . = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 3, 1 onde apenas havia água
+Tiro 1 acertou posicao 4, 5 onde apenas havia água
+Tiro 2 acertou posicao 1, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . + B T * . 
+3 * * = D D = = . 
+4 . = = = . = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 4, 6 onde apenas havia água
+Tiro 1 acertou posicao 0, 6 onde apenas havia água
+Tiro 2 acertou posicao 1, 6 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . + B T * . 
+3 * * = D D = = . 
+4 . = = = = = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 0, 1 onde apenas havia água
+Tiro 1 acertou posicao 3, 4 onde apenas havia água
+Tiro 2 acertou posicao 2, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . B T T * . 
+3 * * = * * = = . 
+4 . = = = = = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 0, 4 onde apenas havia água
+Tiro 1 acertou posicao 2, 1 onde apenas havia água
+Tiro 2 acertou posicao 2, 3 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . B T T T * . 
+3 * * = * * = = . 
+4 . = = = = = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 1, 6 onde apenas havia água
+Tiro 1 acertou posicao 4, 2 onde apenas havia água
+Tiro 2 acertou posicao 0, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . T T T T * . 
+3 * * B * * = = . 
+4 = = = = = = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 0, 6 onde apenas havia água
+Tiro 1 acertou posicao 3, 0 onde apenas havia água
+Tiro 2 acertou posicao 2, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . + T T T * . 
+3 * * T * * = = . 
+4 = = B = = = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 2, 3 onde apenas havia água
+Tiro 1 acertou posicao 4, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . + + T T * . 
+3 * * T * * = = . 
+4 = = T B = = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 1, 3 onde apenas havia água
+Tiro 1 acertou posicao 2, 0 onde apenas havia água
+Tiro 2 acertou posicao 4, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T T * . 
+3 * * T * * = = . 
+4 = = T T B = * . 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 1, 0 onde apenas havia água
+Tiro 1 acertou posicao 3, 6 onde apenas havia água
+Tiro 2 acertou posicao 0, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T T * . 
+3 * * T * * = = . 
+4 = = T T T B * = 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 1, 3 onde apenas havia água
+Tiro 1 acertou posicao 4, 2 onde apenas havia água
+Tiro 2 acertou posicao 3, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T T * . 
+3 * * T * * = = . 
+4 = = + T T T B = 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 3, 7 onde apenas havia água
+Tiro 1 acertou posicao 3, 2 onde apenas havia água
+Tiro 2 acertou posicao 4, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T T * . 
+3 * * T * * = = . 
+4 = = + T T T T B 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 1, 3 onde apenas havia água
+Tiro 1 acertou posicao 3, 2 onde apenas havia água
+Tiro 2 acertou posicao 4, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T T * . 
+3 * * + * * = = . 
+4 = = + T T T B T 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 2, 2 onde apenas havia água
+Tiro 1 acertou posicao 1, 0 onde apenas havia água
+Tiro 2 acertou posicao 2, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T T * . 
+3 * * + * * = = . 
+4 = = + + T B T T 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 0, 6 onde apenas havia água
+Tiro 1 acertou posicao 1, 6 onde apenas havia água
+Tiro 2 acertou posicao 3, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T + * . 
+3 * * + * * = = . 
+4 = = + + B T T T 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 4, 0 onde apenas havia água
+Tiro 1 acertou posicao 4, 6 onde apenas havia água
+Tiro 2 acertou posicao 1, 5 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T + * . 
+3 * * + * * = = . 
+4 = = + B T T T + 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 3, 7 onde apenas havia água
+Tiro 1 acertou posicao 2, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T + * . 
+3 * * + * * = = . 
+4 = = + T B T T + 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 4, 5 onde apenas havia água
+Tiro 1 acertou posicao 4, 3 onde apenas havia água
+Tiro 2 acertou posicao 0, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 = . + + T + * . 
+3 * * + * * = = . 
+4 = = + ! T T T + 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 2, 4 onde apenas havia água
+Tiro 1 acertou posicao 0, 6 onde apenas havia água
+Tiro 2 acertou posicao 3, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . = . . B . H . 
+3 D D . D D . . . 
+4 . . . . . . H . 
+5 C C C C = H . H 
+
+Tiro 0 acertou posicao 4, 4 onde apenas havia água
+Tiro 1 acertou posicao 0, 0 onde havia um Cruzador
+Tiro 2 acertou posicao 1, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . = . B T . H . 
+3 * * . D D . . . 
+4 . . . . = . H . 
+5 C C C C = H . H 
+
+Tiro 0 acertou posicao 2, 0 onde havia um Destroyer
+Tiro 1 acertou posicao 0, 4 onde apenas havia água
+Tiro 2 acertou posicao 3, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * . * 
+2 . = . T B . * . 
+3 * * . D D . . . 
+4 . . . . = . H = 
+5 C C C C = H . H 
+
+Tiro 0 acertou posicao 3, 7 onde apenas havia água
+Tiro 1 acertou posicao 0, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 6 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = . T T B * . 
+3 * * . D D . = . 
+4 . . . . = . H = 
+5 C C C C = H . H 
+
+Tiro 0 acertou posicao 0, 6 onde apenas havia água
+Tiro 1 acertou posicao 2, 0 onde apenas havia água
+Tiro 2 acertou posicao 2, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = . T T T * . 
+3 * * . D D B = . 
+4 . . . . = . * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 0, 4 onde apenas havia água
+Tiro 1 acertou posicao 4, 5 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 4, 2 onde havia um Cruzador
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = . T T T * . 
+3 * * . D D T = . 
+4 . . . . = B * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 0, 6 onde apenas havia água
+Tiro 1 acertou posicao 4, 2 onde apenas havia água
+Tiro 2 acertou posicao 4, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = . T T T * . 
+3 * * . D D T = . 
+4 . . . . B T * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 2, 1 onde apenas havia água
+Tiro 1 acertou posicao 0, 4 onde apenas havia água
+Tiro 2 acertou posicao 3, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = . T T T * . 
+3 * * . D D T = . 
+4 . . . B T T * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 0, 3 onde apenas havia água
+Tiro 1 acertou posicao 4, 2 onde apenas havia água
+Tiro 2 acertou posicao 0, 1 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = . + T T * . 
+3 * * . D D T = . 
+4 . . B T T T * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 0, 1 onde apenas havia água
+Tiro 1 acertou posicao 4, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = = + T T * . 
+3 * * . D D T = . 
+4 . B T T T T * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 1, 2 onde apenas havia água
+Tiro 1 acertou posicao 0, 2 onde apenas havia água
+Tiro 2 acertou posicao 0, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . = = + + T * . 
+3 * B . D D T = . 
+4 . + T T + T * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 3, 1 onde apenas havia água
+Tiro 1 acertou posicao 3, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . B = + + T * . 
+3 * T . * * T = . 
+4 . + T T + T * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 3, 7 onde apenas havia água
+Tiro 1 acertou posicao 3, 6 onde apenas havia água
+Tiro 2 acertou posicao 2, 4 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 * B * * + * = * 
+2 . T = + + T * . 
+3 * T . * * T = . 
+4 . + T T + + * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 3, 5 onde apenas havia água
+Tiro 1 acertou posicao 4, 4 onde apenas havia água
+Tiro 2 acertou posicao 4, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * T * * + * = * 
+2 . B = + + + * . 
+3 * T . * * T = . 
+4 . + T T + + * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 3, 7 onde apenas havia água
+Tiro 1 acertou posicao 1, 5 onde apenas havia água
+Tiro 2 acertou posicao 2, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * T * * + * = * 
+2 . T = + + + * = 
+3 * B . * * T = . 
+4 . + T T + + * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 1, 7 onde apenas havia água
+Tiro 1 acertou posicao 4, 2 onde apenas havia água
+Tiro 2 acertou posicao 1, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * T * * + * = * 
+2 . T = + + + * = 
+3 * T . * * T = . 
+4 . B T T + + * = 
+5 * * * * = * . * 
+
+Tiro 0 acertou posicao 1, 6 onde apenas havia água
+Tiro 1 acertou posicao 0, 7 onde apenas havia água
+Tiro 2 acertou posicao 1, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * T * * + * = * 
+2 . + = + + + * = 
+3 * T . * * T = . 
+4 . T T T + + * = 
+5 * B * * = * = * 
+
+Tiro 0 acertou posicao 2, 0 onde apenas havia água
+Tiro 1 acertou posicao 1, 1 onde apenas havia água
+Tiro 2 acertou posicao 4, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C + * . * 
+2 . = . . B . * . 
+3 D D . D D . . . 
+4 . . . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 1, 1 onde apenas havia água
+Tiro 1 acertou posicao 0, 5 onde havia um Hidro-Aviao
+Tiro 2 acertou posicao 0, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . . B . H . 
+3 * * . D D . . . 
+4 . . . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 0, 4 onde apenas havia água
+Tiro 1 acertou posicao 0, 0 onde havia um Cruzador
+Tiro 2 acertou posicao 2, 1 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . ! T = H . 
+3 * * . D D . . . 
+4 = . . . . . H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 1, 5 onde apenas havia água
+Tiro 1 acertou posicao 3, 0 onde apenas havia água
+Tiro 2 acertou posicao 1, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . B . H = 
+3 D D . D D . . . 
+4 . . . . = . H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 1, 7 onde apenas havia água
+Tiro 1 acertou posicao 4, 1 onde havia um Cruzador
+Tiro 2 acertou posicao 3, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C + H . H 
+2 . . . B T . H = 
+3 * * . D D . . . 
+4 . . . . = = H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 0, 4 onde apenas havia água
+Tiro 1 acertou posicao 3, 5 onde apenas havia água
+Tiro 2 acertou posicao 2, 0 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H = H 
+2 . . . T B . H = 
+3 * * . D D . . . 
+4 . . = . = = H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 0, 1 onde havia um Cruzador
+Tiro 1 acertou posicao 0, 6 onde apenas havia água
+Tiro 2 acertou posicao 3, 2 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . T T B * = 
+3 * * . D D . . . 
+4 . . = = = = H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 1, 6 onde havia um Hidro-Aviao
+Tiro 1 acertou posicao 3, 3 onde apenas havia água
+Tiro 2 acertou posicao 0, 6 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . T T T * = 
+3 * * . * * B . . 
+4 . . = = = = H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 0, 0 onde apenas havia água
+Tiro 1 acertou posicao 0, 3 onde apenas havia água
+Tiro 2 acertou posicao 2, 3 onde havia um Destroyer
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . + T T * = 
+3 * * . * * T = . 
+4 . . = = = B H . 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 2, 6 onde apenas havia água
+Tiro 1 acertou posicao 1, 3 onde apenas havia água
+Tiro 2 acertou posicao 0, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . + T T * = 
+3 * * . * * T = . 
+4 . . = = B T H = 
+5 * * * * . H . H 
+
+Tiro 0 acertou posicao 0, 0 onde apenas havia água
+Tiro 1 acertou posicao 2, 6 onde apenas havia água
+Tiro 2 acertou posicao 3, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . + T T * = 
+3 * * . * * + = . 
+4 . . = = T B H = 
+5 * * * * . H = H 
+
+Tiro 0 acertou posicao 4, 6 onde apenas havia água
+Tiro 1 acertou posicao 0, 7 onde apenas havia água
+Tiro 2 acertou posicao 2, 5 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . + + T * = 
+3 * * . * * + = = 
+4 . . = = B T H = 
+5 * * * * . H = H 
+
+Tiro 0 acertou posicao 0, 7 onde apenas havia água
+Tiro 1 acertou posicao 2, 7 onde apenas havia água
+Tiro 2 acertou posicao 1, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . . + + T * = 
+3 * * . * * + = = 
+4 . . = = T B H = 
+5 * * * * . H = H 
+
+Tiro 0 acertou posicao 3, 3 onde apenas havia água
+Tiro 1 acertou posicao 3, 7 onde apenas havia água
+Tiro 2 acertou posicao 4, 0 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . = + + T * = 
+3 * * . * * B = = 
+4 . . = = T T * = 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 1, 2 onde apenas havia água
+Tiro 1 acertou posicao 4, 4 onde apenas havia água
+Tiro 2 acertou posicao 4, 7 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + * = * 
+2 . . = + + T * = 
+3 * * . * * T = = 
+4 . . = = T ! * = 
+5 * * * * = * = * 
+
+Tiro 0 acertou posicao 2, 7 onde apenas havia água
+Tiro 1 acertou posicao 4, 7 onde apenas havia água
+Tiro 2 acertou posicao 3, 5 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . B . H . 
+3 D D = D D . = . 
+4 . . . . . = H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 2, 6 onde apenas havia água
+Tiro 1 acertou posicao 2, 2 onde apenas havia água
+Tiro 2 acertou posicao 3, 5 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . T ! H = 
+3 D D = D D . = . 
+4 . . . . . = H . 
+5 C C C C . H . H 
+
+Tiro 0 acertou posicao 1, 7 onde apenas havia água
+Tiro 1 acertou posicao 1, 5 onde apenas havia água
+Tiro 2 acertou posicao 1, 7 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 C C C C T H . H 
+2 . . . . B . H . 
+3 * * . * * . . . 
+4 . . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 2, 0 onde havia um Destroyer
+Tiro 1 acertou posicao 2, 4 onde havia um Destroyer
+Tiro 2 acertou posicao 4, 7 onde havia um Hidro-Aviao
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * T H . H 
+2 . . . . + B H = 
+3 * * . * * . . . 
+4 . . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 1, 4 onde apenas havia água
+Tiro 1 acertou posicao 1, 7 onde apenas havia água
+Tiro 2 acertou posicao 0, 1 onde havia um Cruzador
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . . + T H = 
+3 * * . * * B . . 
+4 . . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 0, 4 onde apenas havia água
+Tiro 1 acertou posicao 0, 4 onde apenas havia água
+Tiro 2 acertou posicao 1, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . . = + T H = 
+3 * * . * * T B . 
+4 . . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 0, 2 onde apenas havia água
+Tiro 1 acertou posicao 1, 3 onde apenas havia água
+Tiro 2 acertou posicao 1, 4 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . = = + T H = 
+3 * * . * * T T B 
+4 . . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 2, 3 onde apenas havia água
+Tiro 1 acertou posicao 1, 2 onde apenas havia água
+Tiro 2 acertou posicao 0, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 . . = = + T H B 
+3 * * . * * T T + 
+4 . . . . . . * . 
+5 C C C C . * . * 
+
+Tiro 0 acertou posicao 2, 4 onde apenas havia água
+Tiro 1 acertou posicao 2, 7 onde apenas havia água
+Tiro 2 acertou posicao 0, 3 onde apenas havia água
+
+ 1 2 3 4 5 6 7 8 
+1 * * * * + H . H 
+2 = . = = + T H T 
+3 * * . * * T T B 
+4 . . . . . . * . 
+5 * * * * . * . * 
+
+Tiro 0 acertou posicao 4, 3 onde havia um Cruzador
+Tiro 1 acertou posicao 4, 1 onde havia um Cruzador
+Tiro 2 acertou posicao 1, 0 onde apenas havia água
+

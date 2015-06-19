@@ -63,6 +63,7 @@ int main(){
   else
     printf("aaa%caaaa", mapa->map[0][6]);
   while(!acabou){ /*loop do jogo*/
+    WClear(w);
     escreva_mapa_tela(mapa, 1);
     desenha(w, mapa, texturas, "teste", tamanhotela, tamanhocelula);
     mensagem_movimento(); /*pede para o usuario escolher o movimento do barco*/
@@ -71,7 +72,7 @@ int main(){
     coordenadas = dispara_tiros(mapa);
     barcos = identifica_alvo_atingido(coordenadas, mapa, barco);
     escreva_mapa_tela(mapa, 1);
-    //desenha(w, mapa, texturas, "teste1111", tamanhotela, tamanhocelula);
+    desenha(w, mapa, texturas, "teste1111", tamanhotela, tamanhocelula);
     afunda_embarcacao(barcos, mapa);
     escreve_mapa_arquivo(mapa, 0, pathArquivoE, barcos, coordenadas);
     if(!barco->alive) /* verifica se o barco continua ileso, senao para o loop do jogo*/
