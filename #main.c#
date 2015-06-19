@@ -46,8 +46,6 @@ int main(){
   scanf(" %s", pathArquivoE);
   mapa = leia_mapa(pathArquivoI);
   w = init("Batalha Naval", mapa, texturas, "/texturas/00.xpm", &tamanhotela, &tamanhocelula);
-  if(texturas[0] == NULL)
-    printf("mano");
   printf("\n");
   escreva_mapa_tela(mapa, 0);
   mensagem_posicao(); /*mensagem que pede para o jogador entrar com a posicao inicial*/
@@ -58,10 +56,6 @@ int main(){
     scanf("%d", &posicao);
     OK = posiciona_barco(mapa, posicao, barco);    
   }
-  if(mapa->map[0][6] == ' ')
-    PutPic(w, texturas[0], 0, 0, 50, 50,0, 0);
-  else
-    printf("aaa%caaaa", mapa->map[0][6]);
   while(!acabou){ /*loop do jogo*/
     escreva_mapa_tela(mapa, 1);
     desenha(w, mapa, texturas, "teste", tamanhotela, tamanhocelula);

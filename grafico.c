@@ -1,6 +1,7 @@
 #include "Structs.h"
 #include "grafico.h"
 #include "combate.h"
+#include <stdio.h>
 //#include "xwc.h"
 
 int max2(int a, int b){
@@ -14,16 +15,17 @@ WINDOW* init(char nome[], Map mapa, PIC texturas[], char caminhoTexturas[], coor
   int n = 50;
   int i;
   WINDOW* w;
-  char s[] = "/texturas/n.xpm";
+  char s[] = "texturas/nn.xpm";
   MASK msk;
   *tamanhocelula = 800/max2(mapa->m, mapa->n);
   tamanhotela->x = (*tamanhocelula)*mapa->m;
   tamanhotela->y = (*tamanhocelula)*mapa->n;
-  w = InitGraph(tamanhotela->y, tamanhotela->x + 200, "Batalha Naval");
+  w = InitGraph(tamanhotela->y, tamanhotela->x + 200, nome);
   msk = NewMask(w, *tamanhocelula, *tamanhocelula);
-  for(i = 0; i < n;i++){
-    s[10] = i + 48;
-    texturas[i] = ReadPic(w, s, msk); 
+   for(i = 0; i < n;i++){
+    s[9] = i/10 + 48;
+    s[10] = i%10 + 48;
+    texturas[i] = ReadPic(w, s, NULL); 
   }
   WShow(w);
   return w;
@@ -36,7 +38,7 @@ void desenha(WINDOW* win, Map mapa, PIC texturas[], char texto[], coord tamanhot
   desenha_fundo(win);
   desenha_texto(win, texto, c);
   desenha_grid(win, mapa, texturas, tamanhotela, tamanhocelula);
-}
+  }
 
 void apaga(WINDOW* win, PIC texturas[]){
   
@@ -60,18 +62,20 @@ void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int 
   Boat embarcoes[256];
   int desenhado[mapa->m][mapa->n];
   int i, j;
+  coord co;
   
   for(i = 0; i < mapa->m; i++)
     for(j = 0; j < mapa->n; j++)
       desenhado[i][j] = 0;
-
+  printf("cheguei\n");
   for(i = 0; i < mapa->m; i++)
     for(j = 0; j < mapa->n; j++)
       if(!desenhado[i][j]){
-	coord co;
+	
 	co.x = i;
 	co.y = j;
 	if(ehembarcacao(mapa->map[i][j])){
+	  printf("cheguei1\n");
 	  switch(mapa->map[i][j]){
 	  case 'S':
 	    desenhar_S(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
@@ -87,6 +91,8 @@ void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int 
 	      desenhar_P(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
 	    break;
 	  case 'C':
+	    
+	    printf("chegueic\n");
 	    if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'C')
 	      desenhar_C(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
 	    else if(i + 1 < mapa->m && mapa->map[i + 1][j] == 'C')
@@ -94,9 +100,10 @@ void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int 
 	    
 	    else if(i + 1 < mapa->m && j + 1 < mapa->n && mapa->map[i + 1][j + 1] == 'C')
 	      desenhar_C(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
-	    else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'C')
+	    else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'C'){
+	      printf("chegueic3\n");
 	      desenhar_C(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
-	
+	    }
 	    break;
 	  case 'D':
 	    if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'D')
@@ -126,6 +133,7 @@ void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int 
 	    desenhado[i][j] = 1;
 	    break;
 	  }
+	  printf("cheguei2\n");
 	}
 	else{
 	  desenha_celula(win, mapa, co, texturas, tamanhotela, tamanhocelula);
@@ -150,16 +158,16 @@ void desenha_celula(WINDOW* win, Map mapa, coord coordenadas, PIC texturas[], co
     p = texturas[2];
     break;
   case '!':
-    p = texturas[3]; 
+    p = texturas[1]; //GAMBIARRA
     break;
   case '+':
-    p = texturas[4];
+    p = texturas[1];
     break;
   case 'B':
-    p = texturas[50];
+    p = texturas[4];
   }
-  SetMask(p, msk);
-  PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.x, tamanhocelula*coordenadas.y);
+  //SetMask(p, msk);
+  PutPic(win, p, 0,0, 50, 50, 50*coordenadas.x, 50*coordenadas.y);
 
 }
 
@@ -484,13 +492,18 @@ void desenhar_C(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     p = texturas[13];
     SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.x, tamanhocelula*coordenadas.y);
-    desenhado[coordenadas.x][coordenadas.y] = 1;
+    printf("chegueiceita\n");
+    desenhado[coordenadas.x][coordenadas.y] = 1; //essse eh o problema. eita
+    printf("%d\n", coordenadas.y);
     for(i = 1; i < 3; i++){
       p = texturas[20];
       SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.x, tamanhocelula*(coordenadas.y + i));
+      printf("%d\n", coordenadas.y + i);
       desenhado[coordenadas.x][coordenadas.y + i] = 1;
+      
     }
+    printf("chegueiceita2\n");
     p = texturas[11];
     SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.x, tamanhocelula*(coordenadas.y + 3));
