@@ -28,9 +28,7 @@ Map leia_mapa(char* caminhoDoArquivo){
   Map map;
   int i, j, lixo;
   char c;
-  
   FILE *file = fopen(caminhoDoArquivo, "r");
-    
   map = (Map) malloc (sizeof(Map));
   /* Tem um terceiro inteiro no cabecalho do mapa
      que ninguem sabe para que serve, chamei de lixo. 
@@ -48,14 +46,14 @@ Map leia_mapa(char* caminhoDoArquivo){
     for(j = 0; j < map->n; j++){
       c = (int) fgetc(file);
       if(c != '|'){ 
-	map->map[i][j] = c;
+        map->map[i][j] = c;
       }
       else{
-	while(c != '\n') c = fgetc(file);
-	if(c == '\n'){
-	  c = fgetc(file);
-	  map->map[i][j] = c;
-	}
+        while(c != '\n') c = fgetc(file);
+        if(c == '\n'){
+          c = fgetc(file);
+          map->map[i][j] = c;
+        }
       }
     }
   }
@@ -77,40 +75,40 @@ void escreva_mapa_tela(Map map, int modo){
     for(i = 0; i < map->m; i++){
       OK = 1;
       for(j = 0; j < map->n; j++){
-	if(OK){
-	  if(i <= 8)
-	    printf("%d ", i + 1);
-	  else
-	    printf("%d ", i + 1);
-	  OK = 0;
-	}
-	/* i linha, j coluna*/
-	if(map->map[i][j] == 'C' ||
-	   map->map[i][j] == 'H' ||
-	   map->map[i][j] == 'D' ||
-	   map->map[i][j] == 'P' ||
-	   map->map[i][j] == 'S' ||
-	   map->map[i][j] == ' '
-	   ){
-	  if(i <= 9 && j < 9)
-	    printf("- ");
-	  if(i > 9 && j < 9)
-	    printf("- ");
-	  if(i <= 9 && j >= 9)
-	    printf("- ");
-	  if(i > 9 && j >= 9)
-	    printf("- ");
-	}
-	else{
-	  if(i <= 9 && j < 9)
-	    printf("%c ", map->map[i][j]);
-	  if(i > 9 && j < 9)
-	    printf("%c ", map->map[i][j]);
-	  if(i <= 9 && j >= 9)
-	    printf("%c ", map->map[i][j]);
-	  if(i > 9 && j >= 9)
-	    printf("%c ", map->map[i][j]);
-	}
+        if(OK){
+          if(i <= 8)
+            printf("%d ", i + 1);
+          else
+            printf("%d ", i + 1);
+          OK = 0;
+        }
+        /* i linha, j coluna*/
+        if(map->map[i][j] == 'C' ||
+           map->map[i][j] == 'H' ||
+           map->map[i][j] == 'D' ||
+           map->map[i][j] == 'P' ||
+           map->map[i][j] == 'S' ||
+           map->map[i][j] == ' '
+           ){
+          if(i <= 9 && j < 9)
+            printf("- ");
+          if(i > 9 && j < 9)
+            printf("- ");
+          if(i <= 9 && j >= 9)
+            printf("- ");
+          if(i > 9 && j >= 9)
+            printf("- ");
+        }
+        else{
+          if(i <= 9 && j < 9)
+            printf("%c ", map->map[i][j]);
+          if(i > 9 && j < 9)
+            printf("%c ", map->map[i][j]);
+          if(i <= 9 && j >= 9)
+            printf("%c ", map->map[i][j]);
+          if(i > 9 && j >= 9)
+            printf("%c ", map->map[i][j]);
+        }
       }
       printf("\n");
     }
@@ -119,34 +117,34 @@ void escreva_mapa_tela(Map map, int modo){
     for(i = 0; i < map->m; i++){
       OK = 1;
       for(j = 0; j < map->n; j++){
-	if(OK){
-	  if(i <= 8)
-	    printf("%d ", i + 1);
-	  else
-	    printf("%d ", i + 1);
-	  OK = 0;
-	}
-	/* i linha, j coluna*/
-	if(map->map[i][j] == ' '){
-	  if(i <= 9 && j < 9)
-	    printf(". ");
-	  if(i > 9 && j < 9)
-	    printf(". ");
-	  if(i <= 9 && j >= 9)
-	    printf(". ");
-	  if(i > 9 && j >= 9)
-	    printf(". ");
-	}
-	else{
-	  if(i <= 9 && j < 9)
-	    printf("%c ", map->map[i][j]);
-	  if(i > 9 && j < 9)
-	    printf("%c ", map->map[i][j]);
-	  if(i <= 9 && j >= 9)
-	    printf("%c ", map->map[i][j]);
-	  if(i > 9 && j >= 9)
-	    printf("%c ", map->map[i][j]);
-	}
+        if(OK){
+          if(i <= 8)
+            printf("%d ", i + 1);
+          else
+            printf("%d ", i + 1);
+          OK = 0;
+        }
+        /* i linha, j coluna*/
+        if(map->map[i][j] == ' '){
+          if(i <= 9 && j < 9)
+            printf(". ");
+          if(i > 9 && j < 9)
+            printf(". ");
+          if(i <= 9 && j >= 9)
+            printf(". ");
+          if(i > 9 && j >= 9)
+            printf(". ");
+        }
+        else{
+          if(i <= 9 && j < 9)
+            printf("%c ", map->map[i][j]);
+          if(i > 9 && j < 9)
+            printf("%c ", map->map[i][j]);
+          if(i <= 9 && j >= 9)
+            printf("%c ", map->map[i][j]);
+          if(i > 9 && j >= 9)
+            printf("%c ", map->map[i][j]);
+        }
       }
       printf("\n");
     }
@@ -171,40 +169,40 @@ void escreve_mapa_arquivo(Map map, int modo, char caminhoDoArquivo[], Boat barco
     for(i = 0; i < map->m; i++){
       OK = 1;
       for(j = 0; j < map->n; j++){
-	if(OK){
-	  if(i <= 8)
-	    fprintf(file, "%d ", i + 1);
-	  else
-	    fprintf(file, "%d ", i + 1);
-	  OK = 0;
-	}
-	/* i linha, j coluna*/
-	if(map->map[i][j] == 'C' ||
-	   map->map[i][j] == 'H' ||
-	   map->map[i][j] == 'D' ||
-	   map->map[i][j] == 'P' ||
-	   map->map[i][j] == 'S' ||
-	   map->map[i][j] == ' '
-	   ){
-	  if(i <= 9 && j < 9)
-	    fprintf(file, "- ");
-	  if(i > 9 && j < 9)
-	    fprintf(file, "- ");
-	  if(i <= 9 && j >= 9)
-	    fprintf(file, "- ");
-	  if(i > 9 && j >= 9)
-	    fprintf(file, "- ");
-	}
-	else{
-	  if(i <= 9 && j < 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	  if(i > 9 && j < 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	  if(i <= 9 && j >= 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	  if(i > 9 && j >= 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	}
+        if(OK){
+          if(i <= 8)
+            fprintf(file, "%d ", i + 1);
+          else
+            fprintf(file, "%d ", i + 1);
+          OK = 0;
+        }
+        /* i linha, j coluna*/
+        if(map->map[i][j] == 'C' ||
+           map->map[i][j] == 'H' ||
+           map->map[i][j] == 'D' ||
+           map->map[i][j] == 'P' ||
+           map->map[i][j] == 'S' ||
+           map->map[i][j] == ' '
+           ){
+          if(i <= 9 && j < 9)
+            fprintf(file, "- ");
+          if(i > 9 && j < 9)
+            fprintf(file, "- ");
+          if(i <= 9 && j >= 9)
+            fprintf(file, "- ");
+          if(i > 9 && j >= 9)
+            fprintf(file, "- ");
+        }
+        else{
+          if(i <= 9 && j < 9)
+            fprintf(file, "%c ", map->map[i][j]);
+          if(i > 9 && j < 9)
+            fprintf(file, "%c ", map->map[i][j]);
+          if(i <= 9 && j >= 9)
+            fprintf(file, "%c ", map->map[i][j]);
+          if(i > 9 && j >= 9)
+            fprintf(file, "%c ", map->map[i][j]);
+        }
       }
       fprintf(file, "\n");
     }
@@ -213,34 +211,34 @@ void escreve_mapa_arquivo(Map map, int modo, char caminhoDoArquivo[], Boat barco
     for(i = 0; i < map->m; i++){
       OK = 1;
       for(j = 0; j < map->n; j++){
-	if(OK){
-	  if(i <= 8)
-	    fprintf(file, "%d ", i + 1);
-	  else
-	    fprintf(file, "%d ", i + 1);
-	  OK = 0;
-	}
-	/* i linha, j coluna*/
-	if(map->map[i][j] == ' '){
-	  if(i <= 9 && j < 9)
-	    fprintf(file, ". ");
-	  if(i > 9 && j < 9)
-	    fprintf(file, ". ");
-	  if(i <= 9 && j >= 9)
-	    fprintf(file, ". ");
-	  if(i > 9 && j >= 9)
-	    fprintf(file, ". ");
-	}
-	else{
-	  if(i <= 9 && j < 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	  if(i > 9 && j < 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	  if(i <= 9 && j >= 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	  if(i > 9 && j >= 9)
-	    fprintf(file, "%c ", map->map[i][j]);
-	}
+        if(OK){
+          if(i <= 8)
+            fprintf(file, "%d ", i + 1);
+          else
+            fprintf(file, "%d ", i + 1);
+          OK = 0;
+        }
+        /* i linha, j coluna*/
+        if(map->map[i][j] == ' '){
+          if(i <= 9 && j < 9)
+            fprintf(file, ". ");
+          if(i > 9 && j < 9)
+            fprintf(file, ". ");
+          if(i <= 9 && j >= 9)
+            fprintf(file, ". ");
+          if(i > 9 && j >= 9)
+            fprintf(file, ". ");
+        }
+        else{
+          if(i <= 9 && j < 9)
+            fprintf(file, "%c ", map->map[i][j]);
+          if(i > 9 && j < 9)
+            fprintf(file, "%c ", map->map[i][j]);
+          if(i <= 9 && j >= 9)
+            fprintf(file, "%c ", map->map[i][j]);
+          if(i > 9 && j >= 9)
+            fprintf(file, "%c ", map->map[i][j]);
+        }
       }
       fprintf(file, "\n");
     }

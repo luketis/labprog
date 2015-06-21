@@ -4,9 +4,9 @@ Nomes:
 	Lucas de Carvalho Dias 8941241
 
 comando para compilar: make
-comando para rodar: ./jogo
+comando para rodar: ./jogo <caminho do mapa> <caminho do output>
 	
-# MAC0211 EP2
+# MAC0211 EP3
 #estruturas:
 
 	-Map: struct q vai conter uma array de caracteres de duas dimensoes,e dois ints; numero de linhas e numero de colunas.
@@ -40,10 +40,10 @@ comando para rodar: ./jogo
 	BLOCO interface.c /---------------------------------------------------------------------/
 
 	introducao
-		-escreve um texto no terminal que apresenta o jogo para o jogador
+		-retorna um texto que apresenta o jogo para o jogador
 
 	mensagem_final
-		-A funcao deve escrever um texto no terminal informando o jogador do que aconteceu, baseado no resultad (morreu ou chegou ao final)
+		-A funcao retornarum texto informando o jogador do que aconteceu, baseado no resultad (morreu ou chegou ao final)
 	
 
 	BLOCO combate.c /-------------------------------------------------------------------/	
@@ -61,15 +61,14 @@ comando para rodar: ./jogo
 	BLOCO grafico.c /---------------------------------------------------------------/
 
 	init
-		-cria a janela com parametros baseados no tamanho da tela ( usando esse esquema http://surfingtroves.blogspot.com.br/2011/01/how-to-get-screen-resolution-in-linux-c.html)
+		-cria a janela com e carrega as PICs
 
 	desenha
 		-limpa a tela e depois chama as funcoes:
 		       desenha_fundo
-		       desenha_linhas
 		       desenha_texto	
 		       desenha_grid
-		       desenha_embarcacoes
+		       desenha_x (onde x eh a letra da embarcacao a ser desenhada)
 
 	desenha_fundo
 		-desenha a parte debaixo da tela que serah a faixa onde aparecerao os textos
@@ -85,7 +84,7 @@ comando para rodar: ./jogo
 		-identifica qual embarcacao deve ser desenhada e chama a respectiva funcao
 		
 	desenha_S
-		-acha o centro e o tipo de rotacao da embarcacao e escolhe a PIC para desenhar no centro
+		-acha o tipo de rotacao da embarcacao e escolhe as PICs, e suas posicoes para desenhar
 	desenha_P
 		-analoga
 

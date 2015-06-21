@@ -6,7 +6,7 @@
 
 WINDOW* init(char nome[], Map mapa, PIC texturas[], char caminhoTexturas[], coord* tamanhotela/*por referencia pois vou alteralo*/, int* tamanhocelula/*idem*/);
 
-void desenha(WINDOW* win, Map mapa, PIC texturas[], char texto[], coord tamanhotela, int tamanhocelula);
+void desenha(WINDOW* win, Map mapa, PIC texturas[], char texto[], coord tamanhotela, int tamanhocelula, int modo);
 
 void apaga(WINDOW* win, PIC texturas[]);
 
@@ -14,7 +14,7 @@ void desenha_fundo(WINDOW* win);
 
 void desenha_texto(WINDOW* win, char texto[], coord xy);
 
-void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula);
+void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula, int modo);
 
 void desenha_embarcacoes(WINDOW* win, Map mapa, PIC texturas[]);
 

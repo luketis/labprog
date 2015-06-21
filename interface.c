@@ -2,43 +2,82 @@
 #include "interface.h"
 #include "Structs.h"
 
-void introducao(){
-  printf("Bem-vindo marinheiro \n");
-  printf("\n");
-  printf("    <|> \n");
-  printf("   __|__ |___| |\\        \n");                      
-  printf("   |o__| |___| | \\       \n");                    
-  printf("   |___| |___| |o \\      \n");               
-  printf("  _|___| |___| |__o\\     \n");               
-  printf(" /...\\_____|___|____\\_/ \n");
-  printf(" \\   o * o * * o o  /   \n");
-  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");    
-  printf("BBBBB           tt            lll hh             \n"); 
-  printf("BB   B    aa aa tt      aa aa lll hh        aa aa\n"); 
-  printf("BBBBBB   aa aaa tttt   aa aaa lll hhhhhh   aa aaa\n");
-  printf("BB   BB aa  aaa tt    aa  aaa lll hh   hh aa  aaa\n");
-  printf("BBBBBB   aaa aa  tttt  aaa aa lll hh   hh  aaa aa\n");
-  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-  printf("NN   NN                         lll\n"); 
-  printf("NNN  NN   aa aa vv   vv   aa aa lll\n"); 
-  printf("NN N NN  aa aaa  vv vv   aa aaa lll\n");
-  printf("NN  NNN aa  aaa   vvv   aa  aaa lll\n");
-  printf("NN   NN  aaa aa    v     aaa aa lll\n");
-  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-
-  printf("Entre com o caminho do arquivo que contem o mapa e depois com o caminho \ndo arquivo que contem o arquivo de saida\n");
+char* introducao(){
+  return "Entre com o caminho do arquivo que contem o mapa";
 }
 
-void mensagem_posicao(){
-   printf("Escolha a posicao inicial: \n");
+int get_inicio(WINDOW* w, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula){
+
+  int tecla0, tecla1, tecla2, resultado, valido = 0;
+  coord c;
+  c.x = 40;
+  c.y = tamanhotela.x + 100;
+  while(!valido){
+    tecla0 = WGetKey(w);
+    tecla1 = WGetKey(w);
+
+    printf("%d", tecla1);
+    if(tecla0 == 19)
+      tecla0 = 9;
+    if(tecla1 == 19)
+      tecla1 = 9;
+    if(tecla1 == 36)
+      if(tecla0 - 9 < mapa->m && tecla0 - 9 >= 0 && mapa->map[0][tecla0 - 9] == ' '){
+        resultado = tecla0 - 9;
+        break;
+      }
+      else{ 
+        desenha(w, mapa, texturas, "Posicao invalida,  escolha a posicao e aperte ENTER", tamanhotela, tamanhocelula, 1);
+        continue;
+      }
+    tecla2 = WGetKey(w);
+    if(tecla2 == 36){
+      int u = 10*(tecla0 - 9) + tecla1 - 9;
+      if(u < mapa->m && u >= 0 && mapa->map[0][u] == ' '){
+        resultado = u;
+        break;
+      }
+      else{
+        desenha(w, mapa, texturas, "Posicao invalida,  escolha a posicao e aperte ENTER", tamanhotela, tamanhocelula, 1);
+        continue;
+      }
+    }
+    desenha(w, mapa, texturas, "Posicao invalida, escolha a posicao e aperte ENTER", tamanhotela, tamanhocelula, 1);
+  }
+  return resultado;
 }
 
-void mensagem_posicao_invalida(){
-  printf("Posição inválida, entre com outra.\n");
+int get_movimento(WINDOW* w, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula, char texto[]){
+  int tecla, ok = 1;
+  coord c;
+  c.x = 40;
+  c.y = tamanhotela.x + 50;
+  tecla = WGetKey(w);
+  if(!(tecla == 113 || tecla== 114 || tecla == 116 || tecla == 111))
+    ok = 0;
+  while(!ok){
+    desenha(w, mapa, texturas, texto, tamanhotela, tamanhocelula, 0);
+    tecla = WGetKey(w);
+    if(tecla == 113 || tecla== 114 || tecla == 116 || tecla == 111)
+      ok = 1;
+  }
+  return tecla;
 }
 
-void mensagem_movimento(){
-  printf("Escolha para qual direcao se movimentar:\n");
+char* mensagem_posicao(){
+   return "Escolha a posicao inicial: ";
+}
+
+char* mensagem_posicao_invalida(){
+  return "Posição inválida, entre com outra.";
+}
+
+char* mensagem_movimento(){
+  return "Escolha para qual direcao se movimentar:";
+}
+
+char* mensagem_movimento_invalido(){
+  return "Movimento invalido, talvez ha algo bloqueando";
 }
 
 void mensagem_turno(coord* coordenadas, Boat* atingidos, int modo, char caminho[]){
@@ -84,24 +123,12 @@ void mensagem_turno(coord* coordenadas, Boat* atingidos, int modo, char caminho[
   if(modo)
     fclose(c);
 }
-void mensagem_final(int morreu){
+char* mensagem_final(int morreu){
    if(morreu){
-    printf("Você perdeu, você é uma vergonha para sua familia pirata.\n");
-    printf("    _____    \n");
-    printf("   /     \\  \n");
-    printf("  | () () |  \n");
-    printf("   \\  ^  /  \n");
-    printf("    |||||    \n");
-    printf("    |||||    \n"); 
+     return "Voce perdeu, voce eh uma vergonha para sua familia pirata";
   }
 
   else{
-    printf("PARABÉNS Marinheiro !\n");
-    printf(" **  ** \n");
-    printf(" **  **  \n");
-    printf("\n");
-    printf("*     * \n");
-    printf(" *   * \n");
-    printf("  ***  \n");
+    return "PARABENS Marinheiro !";
   }
 }

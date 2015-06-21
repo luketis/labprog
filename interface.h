@@ -2,17 +2,24 @@
 #define _interface_h
 
 #include "Structs.h"
+#include "grafico.h"
 
-void introducao();
+char* introducao();
 
-void mensagem_posicao();
+int get_inicio(WINDOW* w, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula);
 
-void mensagem_posicao_invalida();
+int get_movimento(WINDOW* w, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula, char texto[]);
 
-void mensagem_movimento();
+char* mensagem_posicao();
+
+char* mensagem_posicao_invalida();
+
+char* mensagem_movimento();
+
+char* mensagem_movimento_invalido();
 
 void mensagem_turno(coord* coordenadas, Boat* atingidos, int modo, char caminho[]);
   
-void mensagem_final(int morreu);
+char* mensagem_final(int morreu);
 
 #endif

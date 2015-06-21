@@ -12,15 +12,15 @@ int max2(int a, int b){
 
 WINDOW* init(char nome[], Map mapa, PIC texturas[], char caminhoTexturas[], coord* tamanhotela/*por referencia pois vou alteralo*/, int* tamanhocelula/*idem*/){
 
-  int n = 50;
+  int n = 51;
   int i;
   WINDOW* w;
   char s[] = "texturas/nn.xpm";
   MASK msk;
-  *tamanhocelula = 800/max2(mapa->m, mapa->n);
-  tamanhotela->x = (*tamanhocelula)*mapa->m;
-  tamanhotela->y = (*tamanhocelula)*mapa->n;
-  w = InitGraph(tamanhotela->y, tamanhotela->x + 200, nome);
+  *tamanhocelula = 50;
+  tamanhotela->x = 50*mapa->m;
+  tamanhotela->y = 50*mapa->n;
+  w = InitGraph(tamanhotela->y, tamanhotela->x + 100, nome);
   msk = NewMask(w, *tamanhocelula, *tamanhocelula);
    for(i = 0; i < n;i++){
     s[9] = i/10 + 48;
@@ -31,13 +31,14 @@ WINDOW* init(char nome[], Map mapa, PIC texturas[], char caminhoTexturas[], coor
   return w;
 }
 
-void desenha(WINDOW* win, Map mapa, PIC texturas[], char texto[], coord tamanhotela, int tamanhocelula){
+void desenha(WINDOW* win, Map mapa, PIC texturas[], char texto[], coord tamanhotela, int tamanhocelula, int modo){
   coord c;
-  c.y = tamanhotela.x + 100;
+  c.y = tamanhotela.x + 50;
   c.x = 40;
+  WClear(win);
   desenha_fundo(win);
   desenha_texto(win, texto, c);
-  desenha_grid(win, mapa, texturas, tamanhotela, 50);
+  desenha_grid(win, mapa, texturas, tamanhotela, 50, modo);
   }
 
 void apaga(WINDOW* win, PIC texturas[]){
@@ -46,7 +47,6 @@ void apaga(WINDOW* win, PIC texturas[]){
   int i;
   for(i = 0; i < n; i++)
     FreePic(texturas[i]);
-  //WDestroy(win);
 }
 
 void desenha_fundo(WINDOW* win){
@@ -57,7 +57,7 @@ void desenha_texto(WINDOW* win, char texto[], coord xy){
   WPrint(win, xy.x, xy.y, texto);
 }
 
-void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula){
+void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int tamanhocelula, int modo){
   
   Boat embarcoes[256];
   int **desenhado = malloc(mapa->m*sizeof(int*));
@@ -69,83 +69,73 @@ void desenha_grid(WINDOW* win, Map mapa, PIC texturas[], coord tamanhotela, int 
     for(j = 0; j < mapa->n; j++)
       desenhado[i][j] = 0;
   }
-  printf("cheguei\n");
   for(i = 0; i < mapa->m; i++)
     for(j = 0; j < mapa->n; j++)
       if(!desenhado[i][j]){
-	
-	co.x = i;
-	co.y = j;
-	if(ehembarcacao(mapa->map[i][j])){
-	  printf("cheguei1\n");
-	  switch(mapa->map[i][j]){
-	  case 'S':
-	    desenhar_S(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
-	    break;
-	  case 'P':
-	    printf("chegueip\n");
-	    if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'P')
-	      desenhar_P(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
-	    else if(i + 1 < mapa->m && mapa->map[i + 1][j] == 'P')
-	      desenhar_P(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
-	    else if(i + 1 < mapa->m && j + 1 < mapa->n && mapa->map[i + 1][j + 1] == 'P')
-	      desenhar_P(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
-	    else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'P')
-	      desenhar_P(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
-	    break;
-	  case 'C':
-	    
-	    printf("chegueic\n");
-	    if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'C')
-	      desenhar_C(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
-	    else if(i + 1 < mapa->m && mapa->map[i + 1][j] == 'C')
-	      desenhar_C(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
-	    
-	    else if(i + 1 < mapa->m && j + 1 < mapa->n && mapa->map[i + 1][j + 1] == 'C')
-	      desenhar_C(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
-	    else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'C'){
-	      printf("chegueic3\n");
-	      desenhar_C(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
-	    }
-	    break;
-	  case 'D':
-	    printf("chegueiD\n");
-	    if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'D')
-	      desenhar_D(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
-	    else if(i + 1 < mapa->m && mapa->map[i + 1][j] == 'D')
-	      desenhar_D(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
-	    else if(i + 1 < mapa->m && j + 1 < mapa->n && mapa->map[i + 1][j + 1] == 'D')
-	      desenhar_D(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
-	    else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'D')
-	      desenhar_D(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
-	    
-	    break;
-	  case 'H':
-	    printf("chegueiH\n");
-	    if(i + 2 < mapa->m && mapa->map[i + 2][j] == 'H')
-	      if(j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'H')
-		desenhar_H(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
-	      else
-		desenhar_H(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
-	    else
-	      if(j - 1 >= 0 && i + 1 < mapa->m && mapa->map[i + 1][j - 1] == 'H')
-		desenhar_H(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
-	      else
-		desenhar_H(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
-	    break;
-	  case 'B':
-	    desenha_celula(win, mapa, co, texturas, tamanhotela, tamanhocelula);
-	    desenhado[i][j] = 1;
-	    break;
-	  }
-	  printf("cheguei2\n");
-	}
-	else{
-	  co.x = i;
-	  co.y = j;
-	  desenha_celula(win, mapa, co, texturas, tamanhotela, tamanhocelula);
-	  desenhado[i][j] = 1;
-	}	
+        
+        co.x = i;
+        co.y = j;
+        if(ehembarcacao(mapa->map[i][j]) && modo){
+          switch(mapa->map[i][j]){
+          case 'S':
+            desenhar_S(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
+            break;
+          case 'P':
+            if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'P')
+              desenhar_P(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
+            else if(i + 1 < mapa->m && mapa->map[i + 1][j] == 'P')
+              desenhar_P(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
+            else if(i + 1 < mapa->m && j + 1 < mapa->n && mapa->map[i + 1][j + 1] == 'P')
+              desenhar_P(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
+            else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'P')
+              desenhar_P(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
+            break;
+          case 'C':
+            if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'C')
+              desenhar_C(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
+            else if(i + 1 < mapa->m && mapa->map[i + 1][j] == 'C')
+              desenhar_C(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
+            
+            else if(i + 1 < mapa->m && j + 1 < mapa->n && mapa->map[i + 1][j + 1] == 'C')
+              desenhar_C(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
+            else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'C')
+              desenhar_C(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
+            break;
+          case 'D':
+            if(i + 1 < mapa->m && j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'D')
+              desenhar_D(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
+            else if(i + 1 < mapa->m && mapa->map[i + 1][j] == 'D')
+              desenhar_D(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
+            else if(i + 1 < mapa->m && j + 1 < mapa->n && mapa->map[i + 1][j + 1] == 'D')
+              desenhar_D(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
+            else if(j + 1 < mapa->n && mapa->map[i][j + 1] == 'D')
+              desenhar_D(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
+            
+            break;
+          case 'H':
+            if(i + 2 < mapa->m && mapa->map[i + 2][j] == 'H')
+              if(j - 1 >= 0 && mapa->map[i + 1][j - 1] == 'H')
+                desenhar_H(win, co, mapa, desenhado, tamanhocelula, 0, texturas);
+              else
+                desenhar_H(win, co, mapa, desenhado, tamanhocelula, 1, texturas);
+            else
+              if(j - 1 >= 0 && i + 1 < mapa->m && mapa->map[i + 1][j - 1] == 'H')
+                desenhar_H(win, co, mapa, desenhado, tamanhocelula, 2, texturas);
+              else
+                desenhar_H(win, co, mapa, desenhado, tamanhocelula, 3, texturas);
+            break;
+          case 'B':
+            desenha_celula(win, mapa, co, texturas, tamanhotela, tamanhocelula);
+            desenhado[i][j] = 1;
+            break;
+          }
+        }
+        else{
+          co.x = i;
+          co.y = j;
+          desenha_celula(win, mapa, co, texturas, tamanhotela, tamanhocelula);
+          desenhado[i][j] = 1;
+        }       
       }
 
   
@@ -170,7 +160,7 @@ void desenha_celula(WINDOW* win, Map mapa, coord coordenadas, PIC texturas[], co
     p = texturas[2];
     break;
   case '!':
-    p = texturas[1]; //GAMBIARRA
+    p = texturas[50];
     break;
   case '+':
     p = texturas[1];
@@ -181,180 +171,173 @@ void desenha_celula(WINDOW* win, Map mapa, coord coordenadas, PIC texturas[], co
   case 'T':
     p = texturas[0];
     break;
+  default:
+    p = texturas[0];
+    break;
   }
-  //SetMask(p, msk);
-  printf("%d  %d   %c\n", coordenadas.y, coordenadas.x, mapa->map[coordenadas.x][coordenadas.y]);
   PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
-  printf("desenhou\n");
-
 }
 
 void desenhar_S(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]){
   PIC p = texturas[21];
   MASK msk = NewMask(win, tamanhocelula, tamanhocelula);
-  SetMask(p, msk);
   PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
   desenhado[coordenadas.x][coordenadas.y] = 1;
 }
 
 void desenhar_P(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]){
   PIC p;
-  MASK msk = NewMask(win, tamanhocelula, tamanhocelula);
   int i, j;
   switch(tipo){
   case 0:
  
     p = texturas[6];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[18];
-    //SetMask(p, msk);
     for(i = 1; i < 4; i++){
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - i), tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y - i] = 1;
     }
     p = texturas[8];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 4), tamanhocelula*(coordenadas.x + 4));
     desenhado[coordenadas.x + 4][coordenadas.y - 4] = 1;
     
     for(i = 0; i < 4; i++){
       switch(mapa->map[coordenadas.x + i][coordenadas.y - i - 1]){
       case ' ':
-	p = texturas[7];
-	break;
+        p = texturas[7];
+        break;
       case '=':
-	p = texturas[46];
-	break;
+        p = texturas[46];
+        break;
       case '!':
-	p = texturas[38];
-	break;
+        p = texturas[38];
+        break;
       case '+':
-	p = texturas[46];
-	break;
+        p = texturas[46];
+        break;
       case 'B':
-	p = texturas[30];
-	break;
+        p = texturas[30];
+        break;
+      default:
+        p = texturas[7];
+        break;
       }
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - i - 1), tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y - i - 1] = 1;
     }
     for(i = 0; i < 4; i++){
       switch(mapa->map[coordenadas.x + i + 1][coordenadas.y - i]){
       case ' ':
-	p = texturas[9];
-	break;
+        p = texturas[9];
+        break;
       case '=':
-	p = texturas[47];
-	break;
+        p = texturas[47];
+        break;
       case '!':
-	p = texturas[39]; 
-	break;
+        p = texturas[39]; 
+        break;
       case '+':
-	p = texturas[47];
-	break;
+        p = texturas[47];
+        break;
       case 'B':
-	p = texturas[31];
-	break;
+        p = texturas[31];
+        break;
+      default:
+        p = texturas[9];
+        break;
       }
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - i), tamanhocelula*(coordenadas.x + i + 1));
       desenhado[coordenadas.x + i + 1][coordenadas.y - i] = 1;
     }
     break;
   case 1:
     p = texturas[10];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     for(i = 1; i < 4; i++){
       p = texturas[19];
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y] = 1;
     }
     p = texturas[12];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*(coordenadas.x + 4));
     desenhado[coordenadas.x + 4][coordenadas.y] = 1;
     break;
 
   case 2:
     p = texturas[7];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[17];
-    //SetMask(p, msk);
     for(i = 1; i < 4; i++){
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i), tamanhocelula*(coordenadas.x + i));
     desenhado[coordenadas.x + i][coordenadas.y + i] = 1;
     }
     p = texturas[9];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 4), tamanhocelula*(coordenadas.x + 4));
     desenhado[coordenadas.x + 4][coordenadas.y + 4] = 1;
     
     for(i = 0; i < 4; i++){
       switch(mapa->map[coordenadas.x + i][coordenadas.y + i + 1]){
       case ' ':
-	p = texturas[6];
-	break;
+        p = texturas[6];
+        break;
       case '=':
-	p = texturas[48];
-	break;
+        p = texturas[48];
+        break;
       case '!':
-	p = texturas[40]; 
-	break;
+        p = texturas[40]; 
+        break;
       case '+':
-	p = texturas[48];
-	break;
+        p = texturas[48];
+        break;
       case 'B':
-	p = texturas[42];
-	break;
+        p = texturas[32];
+        break;
+      default:
+        p = texturas[6];
+        break;
       }
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i + 1), tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y + i + 1] = 1;
     }
     for(i = 0; i < 4; i++){
       switch(mapa->map[coordenadas.x + i + 1][coordenadas.y + i]){
       case ' ':
-	p = texturas[8];
-	break;
+        p = texturas[8];
+        break;
       case '=':
-	p = texturas[49];
-	break;
+        p = texturas[49];
+        break;
       case '!':
-	p = texturas[41]; 
-	break;
+        p = texturas[41]; 
+        break;
       case '+':
-	p = texturas[49];
-	break;
+        p = texturas[49];
+        break;
       case 'B':
-	p = texturas[33];
-	break;
+        p = texturas[33];
+        break;
+        default:
+        p = texturas[8];
+        break;
       }
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i), tamanhocelula*(coordenadas.x + i + 1));
       desenhado[coordenadas.x + i + 1][coordenadas.y + i] = 1;
     }
     break;
   case 3:
     p = texturas[13];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     for(i = 1; i < 4; i++){
       p = texturas[20];
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i), tamanhocelula*coordenadas.x);
       desenhado[coordenadas.x][coordenadas.y + i] = 1;
     }
     p = texturas[11];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 4), tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y + 4] = 1;
     break;
@@ -362,168 +345,158 @@ void desenhar_P(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
 }
 void desenhar_C(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]){
   PIC p;
-  MASK msk = NewMask(win, tamanhocelula, tamanhocelula);
   int i;
   switch(tipo){
   case 0:
  
     p = texturas[6];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[18];
-    // /SetMask(p, msk);
     for(i = 1; i < 3; i++){
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - i), tamanhocelula*(coordenadas.x + i));
     desenhado[coordenadas.x + 1][coordenadas.y - i] = 1;
     }
     p = texturas[8];
-    //SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 3), tamanhocelula*(coordenadas.x + 3));
     desenhado[coordenadas.x + 3][coordenadas.y - 3] = 1;
-    
     for(i = 0; i < 3; i++){
       switch(mapa->map[coordenadas.x + i][coordenadas.y - i - 1]){
       case ' ':
-	p = texturas[7];
-	break;
+        p = texturas[7];
+        break;
       case '=':
-	p = texturas[46];
-	break;
+        p = texturas[46];
+        break;
       case '!':
-	p = texturas[38]; 
-	break;
+        p = texturas[38]; 
+        break;
       case '+':
-	p = texturas[46];
-	break;
+        p = texturas[46];
+        break;
       case 'B':
-	p = texturas[30];
-	break;
+        p = texturas[30];
+        break;
+      default:
+        p = texturas[7];
+        break;
       }
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - i - 1), tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y - i - 1] = 1;
     }
     for(i = 0; i < 3; i++){
       switch(mapa->map[coordenadas.x + i + 1][coordenadas.y - i]){
       case ' ':
-	p = texturas[9];
-	break;
+        p = texturas[9];
+        break;
       case '=':
-	p = texturas[47];
-	break;
+        p = texturas[47];
+        break;
       case '!':
-	p = texturas[39]; 
-	break;
+        p = texturas[39]; 
+        break;
       case '+':
-	p = texturas[47];
-	break;
+        p = texturas[47];
+        break;
       case 'B':
-	p = texturas[31];
-	break;
+        p = texturas[31];
+        break;
+      default:
+        p = texturas[9];
+        break;
       }
-      //SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.x - i), tamanhocelula*(coordenadas.x + i + 1));
       desenhado[coordenadas.x + i + 1][coordenadas.y - i] = 1;
     }
     break;
   case 1:
     p = texturas[10];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     for(i = 1; i < 3; i++){
       p = texturas[19];
-      SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y] = 1;
     }
     p = texturas[12];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*(coordenadas.x + 3));
     desenhado[coordenadas.x + 3][coordenadas.y] = 1;
     break;
 
   case 2:
     p = texturas[7];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[17];
-    SetMask(p, msk);
     for(i = 1; i < 3; i++){
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i), tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y + i] = 1;
     }
     p = texturas[9];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 3), tamanhocelula*(coordenadas.x + 3));
     desenhado[coordenadas.x + 3][coordenadas.y + 3] = 1;
     
     for(i = 0; i < 3; i++){
       switch(mapa->map[coordenadas.x + i][coordenadas.y + i + 1]){
       case ' ':
-	p = texturas[6];
-	break;
+        p = texturas[6];
+        break;
       case '=':
-	p = texturas[48];
-	break;
+        p = texturas[48];
+        break;
       case '!':
-	p = texturas[40]; 
-	break;
+        p = texturas[40]; 
+        break;
       case '+':
-	p = texturas[48];
-	break;
+        p = texturas[48];
+        break;
       case 'B':
-	p = texturas[42];
-	break;
+        p = texturas[42];
+        break;
+      default:
+        p = texturas[6];
+        break;
 
       }
-      SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i + 1), tamanhocelula*(coordenadas.x + i));
       desenhado[coordenadas.x + i][coordenadas.y + i + 1] = 1;
     }
     for(i = 0; i < 3; i++){
       switch(mapa->map[coordenadas.x + i + 1][coordenadas.y + i]){
       case ' ':
-	p = texturas[8];
-	break;
+        p = texturas[8];
+        break;
       case '=':
-	p = texturas[49];
-	break;
+        p = texturas[49];
+        break;
       case '!':
-	p = texturas[41]; 
-	break;
+        p = texturas[41]; 
+        break;
       case '+':
-	p = texturas[49];
-	break;
+        p = texturas[49];
+        break;
       case 'B':
-	p = texturas[33];
-	break;
+        p = texturas[33];
+        break;
+      default:
+        p = texturas[8];
+        break;
       }
-      SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i), tamanhocelula*(coordenadas.x + i + 1));
       desenhado[coordenadas.x + i + 1][coordenadas.y + i] = 1;
     }
     break;
   case 3:
     p = texturas[13];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
-    printf("chegueiceita\n");
     desenhado[coordenadas.x][coordenadas.y] = 1;
-    printf("%d\n", coordenadas.y);
     for(i = 1; i < 3; i++){
       p = texturas[20];
-      SetMask(p, msk);
       PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + i), tamanhocelula*coordenadas.x);
-      printf("%d\n", coordenadas.y + i);
       desenhado[coordenadas.x][coordenadas.y + i] = 1;
       
     }
-    printf("chegueiceita2\n");
     p = texturas[11];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 3), tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y + 3] = 1;
     break;
@@ -532,20 +505,16 @@ void desenhar_C(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
 
 void desenhar_D(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]){
   PIC p;
-  MASK msk = NewMask(win, tamanhocelula, tamanhocelula);
   int i;
   switch(tipo){
   case 0:
  
     p = texturas[6];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[8];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 1), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y - 1] = 1;
-    
     switch(mapa->map[coordenadas.x][coordenadas.y - 1]){
     case ' ':
       p = texturas[7];
@@ -562,103 +531,100 @@ void desenhar_D(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[30];
       break;
+    default:
+      p = texturas[7];
+      break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 1), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y - 1] = 1;
-    
-    
     switch(mapa->map[coordenadas.x + 1][coordenadas.y]){
       case ' ':
-	p = texturas[9];
-	break;
+        p = texturas[9];
+        break;
       case '=':
-	p = texturas[47];
-	break;
+        p = texturas[47];
+        break;
       case '!':
-	p = texturas[39]; 
-	break;
+        p = texturas[39]; 
+        break;
       case '+':
-	p = texturas[47];
-	break;
+        p = texturas[47];
+        break;
       case 'B':
-	p = texturas[31];
-	break;
-	
+        p = texturas[31];
+        break;
+    default:
+      p = texturas[9];
+      break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y] = 1;
     break;
   case 1:
     p = texturas[10];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[12];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y] = 1;
     break;
 
   case 2:
     p = texturas[7];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[9];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y + 1] = 1;
-    
     switch(mapa->map[coordenadas.x][coordenadas.y + 1]){
-    	p = texturas[6];
-	break;
+        p = texturas[6];
+        break;
       case '=':
-	p = texturas[48];
-	break;
+        p = texturas[48];
+        break;
       case '!':
-	p = texturas[40]; 
-	break;
+        p = texturas[40]; 
+        break;
       case '+':
-	p = texturas[48];
-	break;
+        p = texturas[48];
+        break;
       case 'B':
-	p = texturas[42];
-	break;
+        p = texturas[42];
+        break;
+    default:
+      p = texturas[6];
+      break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y + 1] = 1;
-    
     switch(mapa->map[coordenadas.x + 1][coordenadas.y]){
     case ' ':
       p = texturas[8];
-	break;
+        break;
       case '=':
-	p = texturas[49];
-	break;
+        p = texturas[49];
+        break;
       case '!':
-	p = texturas[41]; 
-	break;
+        p = texturas[41]; 
+        break;
       case '+':
-	p = texturas[49];
-	break;
+        p = texturas[49];
+        break;
       case 'B':
-	p = texturas[33];
-	break;
+        p = texturas[33];
+        break;
+    default:
+      p = texturas[8];
+      break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y] = 1;
     break;
   case 3:
     p = texturas[13];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[11];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y + 1] = 1;
     break;
@@ -666,24 +632,18 @@ void desenhar_D(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
 }
 
 void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int tamanhocelula, int tipo, PIC texturas[]){
-  printf("chegueiHDENTRO\n");
   PIC p;
-  MASK msk = NewMask(win, tamanhocelula, tamanhocelula);
   int i;
-  
+
   switch(tipo){
   case 0:
-    printf("chegueiH0\n");
     p = texturas[6];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[15];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 1), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y - 1] = 1;
     p = texturas[9];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*(coordenadas.x + 2));
     desenhado[coordenadas.x + 2][coordenadas.y] = 1;
     
@@ -703,8 +663,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[30];
       break;
+      default:
+        p = texturas[7];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 1), tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y - 1] = 1;
 
@@ -724,8 +686,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[33];
       break;
+      default:
+        p = texturas[8];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 1), tamanhocelula*(coordenadas.x + 2));
     desenhado[coordenadas.x + 2][coordenadas.y - 1] = 1;
 
@@ -745,23 +709,21 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[29];
       break;
+      default:
+        p = texturas[22];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y] = 1;
     break;
   case 1:
-    printf("chegueiH1\n");
     p = texturas[7];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[14];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y + 1] = 1;
     p = texturas[8];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*(coordenadas.x + 2));
     desenhado[coordenadas.x + 2][coordenadas.y] = 1;
 
@@ -781,8 +743,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[32];
       break;
+      default:
+        p = texturas[6];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y + 1] = 1;
 
@@ -803,7 +767,6 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
       p = texturas[28];
       break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y] = 1;
 
@@ -823,24 +786,22 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[31];
       break;
+      default:
+        p = texturas[9];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x + 2));
     desenhado[coordenadas.x + 2][coordenadas.y + 1] = 1;
     break;
 
   case 2:
-    printf("chegueiH2\n");
     p = texturas[5];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[8];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 1), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y - 1] = 1;
     p = texturas[9];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y + 1] = 1;
     
@@ -860,8 +821,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[30];
       break;
+      default:
+        p = texturas[7];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y - 1), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y - 1] = 1;
 
@@ -881,8 +844,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[32];
       break;
+      default:
+        p = texturas[6];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y + 1] = 1;
 
@@ -902,24 +867,22 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[27];
       break;
+      default:
+        p = texturas[23];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y] = 1;
     break;
 
   case 3:
-    printf("chegueiH3\n");
     p = texturas[7];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*coordenadas.y, tamanhocelula*coordenadas.x);
     desenhado[coordenadas.x][coordenadas.y] = 1;
     p = texturas[16];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y + 1] = 1;
     p = texturas[6];
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 2), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y + 2] = 1;
     
@@ -939,8 +902,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[26];
       break;
+      default:
+        p = texturas[25];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 1), tamanhocelula*(coordenadas.x));
     desenhado[coordenadas.x][coordenadas.y + 1] = 1;
 
@@ -960,8 +925,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[33];
       break;
+      default:
+        p = texturas[8];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y] = 1;
 
@@ -981,8 +948,10 @@ void desenhar_H(WINDOW* win, coord coordenadas, Map mapa, int** desenhado, int t
     case 'B':
       p = texturas[31];
       break;
+      default:
+        p = texturas[9];
+        break;
     }
-    SetMask(p, msk);
     PutPic(win, p, 0,0, tamanhocelula, tamanhocelula, tamanhocelula*(coordenadas.y + 2), tamanhocelula*(coordenadas.x + 1));
     desenhado[coordenadas.x + 1][coordenadas.y + 2] = 1;
     break;

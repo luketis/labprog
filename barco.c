@@ -12,10 +12,10 @@ int posiciona_barco(Map map, int B, Boat barco){
   return 0;
 }
 
-int rema_barco(Map map, Boat barco, char movimento){
+int rema_barco(Map map, Boat barco, int movimento){
 
   switch(movimento){
-  case 'c':
+  case 111:
     if(barco->pos.x - 1 >= 0 && !ehembarcacao(map->map[barco->pos.x - 1][barco->pos.y])){
       map->map[barco->pos.x][barco->pos.y] = 'T';
       barco->pos.x -= 1;
@@ -23,7 +23,7 @@ int rema_barco(Map map, Boat barco, char movimento){
       return 1;
     }
     return 0;
-  case 'b':
+  case 116:
     if(barco->pos.x + 1 < map->m && !ehembarcacao(map->map[barco->pos.x + 1][barco->pos.y])){
       map->map[barco->pos.x][barco->pos.y] = 'T';
       barco->pos.x += 1;
@@ -31,7 +31,7 @@ int rema_barco(Map map, Boat barco, char movimento){
       return 1;
     }
     return 0;
-  case 'd':
+  case 114:
     if(barco->pos.y + 1 < map->n && !ehembarcacao(map->map[barco->pos.x][barco->pos.y + 1])){
       map->map[barco->pos.x][barco->pos.y] = 'T';
       barco->pos.y += 1;
@@ -39,7 +39,7 @@ int rema_barco(Map map, Boat barco, char movimento){
       return 1;
     }
     return 0;
-  case 'e':
+  case 113:
     if(barco->pos.y - 1 >= 0 && !ehembarcacao(map->map[barco->pos.x][barco->pos.y - 1])){
       map->map[barco->pos.x][barco->pos.y] = 'T';
       barco->pos.y -= 1;
@@ -50,7 +50,7 @@ int rema_barco(Map map, Boat barco, char movimento){
     
   default:
     //movimento invalido
-    return -1;
+    return 0;
   }
 }
 

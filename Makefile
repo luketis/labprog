@@ -14,7 +14,7 @@ barco.o: barco.c barco.h combate.h Structs.h
 maphandling.o: maphandling.c maphandling.h combate.h Structs.h
 	$(CC) $(FLAGS) -c maphandling.c
 
-interface.o: interface.c interface.h Structs.h
+interface.o: interface.c interface.h Structs.h xwc.o
 	$(CC) $(FLAGS) -c interface.c
 
 combate.o: combate.c afundador.c
